@@ -1,1 +1,1 @@
-savedcmd_modules.order := {   echo dmesg_injector.o; :; } > modules.order
+savedcmd_modules.order := {   echo dmesg_inject.o; :; } > modules.order
