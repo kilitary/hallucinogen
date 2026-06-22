@@ -1,9 +1,8 @@
-savedcmd_dmesg_injector.mod.o := gcc-13 -Wp,-MMD,./.dmesg_injector.mod.o.d -nostdinc -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/generated -I/usr/src/linux-headers-6.17.0-35-generic/include -I/usr/src/linux-headers-6.17.0-35-generic/include -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/uapi -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.17.0-35-generic/include/uapi -I/usr/src/linux-headers-6.17.0-35-generic/include/generated/uapi -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler-version.h -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/kconfig.h -I/usr/src/linux-headers-6.17.0-35-generic/ubuntu/include -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftrivial-auto-var-init=zero -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=1024 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g -gdwarf-5  -fsanitize=bounds-strict -fsanitize=shift -fsanitize=bool -fsanitize=enum    -DMODULE  -DKBUILD_BASENAME='"dmesg_injector.mod"' -DKBUILD_MODNAME='"dmesg_injector"' -D__KBUILD_MODNAME=kmod_dmesg_injector -c -o dmesg_injector.mod.o dmesg_injector.mod.c   ; /usr/src/linux-headers-6.17.0-35-generic/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16 --Werror   --module dmesg_injector.mod.o
+savedcmd_dmesg_inject.o := gcc-13 -Wp,-MMD,./.dmesg_inject.o.d -nostdinc -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/generated -I/usr/src/linux-headers-6.17.0-35-generic/include -I/usr/src/linux-headers-6.17.0-35-generic/include -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/uapi -I/usr/src/linux-headers-6.17.0-35-generic/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.17.0-35-generic/include/uapi -I/usr/src/linux-headers-6.17.0-35-generic/include/generated/uapi -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler-version.h -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/kconfig.h -I/usr/src/linux-headers-6.17.0-35-generic/ubuntu/include -include /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftrivial-auto-var-init=zero -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=1024 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g -gdwarf-5  -fsanitize=bounds-strict -fsanitize=shift -fsanitize=bool -fsanitize=enum    -DMODULE  -DKBUILD_BASENAME='"dmesg_inject"' -DKBUILD_MODNAME='"dmesg_inject"' -D__KBUILD_MODNAME=kmod_dmesg_inject -c -o dmesg_inject.o dmesg_inject.c   ; /usr/src/linux-headers-6.17.0-35-generic/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16 --Werror   --module dmesg_inject.o
 
-source_dmesg_injector.mod.o := dmesg_injector.mod.c
+source_dmesg_inject.o := dmesg_inject.c
 
-deps_dmesg_injector.mod.o := \
-    $(wildcard include/config/MODULE_UNLOAD) \
+deps_dmesg_inject.o := \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/kconfig.h \
@@ -31,36 +30,9 @@ deps_dmesg_injector.mod.o := \
     $(wildcard include/config/SHADOW_CALL_STACK) \
     $(wildcard include/config/KCOV) \
     $(wildcard include/config/CC_HAS_TYPEOF_UNQUAL) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/module.h \
-    $(wildcard include/config/MODULES) \
-    $(wildcard include/config/SYSFS) \
-    $(wildcard include/config/MODULES_TREE_LOOKUP) \
-    $(wildcard include/config/LIVEPATCH) \
-    $(wildcard include/config/STACKTRACE_BUILD_ID) \
-    $(wildcard include/config/ARCH_USES_CFI_TRAPS) \
-    $(wildcard include/config/MODULE_SIG) \
-    $(wildcard include/config/GENERIC_BUG) \
-    $(wildcard include/config/KALLSYMS) \
-    $(wildcard include/config/SMP) \
-    $(wildcard include/config/TRACEPOINTS) \
-    $(wildcard include/config/TREE_SRCU) \
-    $(wildcard include/config/BPF_EVENTS) \
-    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
-    $(wildcard include/config/JUMP_LABEL) \
-    $(wildcard include/config/TRACING) \
-    $(wildcard include/config/EVENT_TRACING) \
-    $(wildcard include/config/DYNAMIC_FTRACE) \
-    $(wildcard include/config/KPROBES) \
-    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
-    $(wildcard include/config/KUNIT) \
-    $(wildcard include/config/PRINTK_INDEX) \
-    $(wildcard include/config/CONSTRUCTORS) \
-    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
-    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/list.h \
-    $(wildcard include/config/LIST_HARDENED) \
-    $(wildcard include/config/DEBUG_LIST) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/container_of.h \
+  /usr/src/linux-headers-6.17.0-35-generic/include/linux/init.h \
+    $(wildcard include/config/MEMORY_HOTPLUG) \
+    $(wildcard include/config/HAVE_ARCH_PREL32_RELOCATIONS) \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/build_bug.h \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/compiler.h \
     $(wildcard include/config/TRACE_BRANCH_PROFILING) \
@@ -98,6 +70,38 @@ deps_dmesg_injector.mod.o := \
     $(wildcard include/config/KCSAN) \
     $(wildcard include/config/KCSAN_WEAK_MEMORY) \
     $(wildcard include/config/KCSAN_IGNORE_ATOMICS) \
+  /usr/src/linux-headers-6.17.0-35-generic/include/linux/stringify.h \
+  /usr/src/linux-headers-6.17.0-35-generic/include/linux/module.h \
+    $(wildcard include/config/MODULES) \
+    $(wildcard include/config/SYSFS) \
+    $(wildcard include/config/MODULES_TREE_LOOKUP) \
+    $(wildcard include/config/LIVEPATCH) \
+    $(wildcard include/config/STACKTRACE_BUILD_ID) \
+    $(wildcard include/config/ARCH_USES_CFI_TRAPS) \
+    $(wildcard include/config/MODULE_SIG) \
+    $(wildcard include/config/GENERIC_BUG) \
+    $(wildcard include/config/KALLSYMS) \
+    $(wildcard include/config/SMP) \
+    $(wildcard include/config/TRACEPOINTS) \
+    $(wildcard include/config/TREE_SRCU) \
+    $(wildcard include/config/BPF_EVENTS) \
+    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
+    $(wildcard include/config/JUMP_LABEL) \
+    $(wildcard include/config/TRACING) \
+    $(wildcard include/config/EVENT_TRACING) \
+    $(wildcard include/config/DYNAMIC_FTRACE) \
+    $(wildcard include/config/KPROBES) \
+    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
+    $(wildcard include/config/KUNIT) \
+    $(wildcard include/config/PRINTK_INDEX) \
+    $(wildcard include/config/MODULE_UNLOAD) \
+    $(wildcard include/config/CONSTRUCTORS) \
+    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
+    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
+  /usr/src/linux-headers-6.17.0-35-generic/include/linux/list.h \
+    $(wildcard include/config/LIST_HARDENED) \
+    $(wildcard include/config/DEBUG_LIST) \
+  /usr/src/linux-headers-6.17.0-35-generic/include/linux/container_of.h \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/poison.h \
     $(wildcard include/config/ILLEGAL_POINTER_VALUE) \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/const.h \
@@ -108,7 +112,6 @@ deps_dmesg_injector.mod.o := \
     $(wildcard include/config/CALL_THUNKS) \
     $(wildcard include/config/MITIGATION_ITS) \
     $(wildcard include/config/MITIGATION_RETHUNK) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/stringify.h \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/objtool.h \
     $(wildcard include/config/FRAME_POINTER) \
     $(wildcard include/config/NOINSTR_VALIDATION) \
@@ -134,9 +137,6 @@ deps_dmesg_injector.mod.o := \
     $(wildcard include/config/EARLY_PRINTK) \
     $(wildcard include/config/PRINTK) \
     $(wildcard include/config/DYNAMIC_DEBUG) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/init.h \
-    $(wildcard include/config/MEMORY_HOTPLUG) \
-    $(wildcard include/config/HAVE_ARCH_PREL32_RELOCATIONS) \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/kern_levels.h \
   /usr/src/linux-headers-6.17.0-35-generic/include/linux/linkage.h \
     $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
@@ -1071,11 +1071,9 @@ deps_dmesg_injector.mod.o := \
     $(wildcard include/config/UNWINDER_ORC) \
   /usr/src/linux-headers-6.17.0-35-generic/include/asm-generic/module.h \
     $(wildcard include/config/HAVE_MOD_ARCH_SPECIFIC) \
-  /usr/src/linux-headers-6.17.0-35-generic/include/linux/export-internal.h \
-    $(wildcard include/config/PARISC) \
 
-dmesg_injector.mod.o: $(deps_dmesg_injector.mod.o)
+dmesg_inject.o: $(deps_dmesg_inject.o)
 
-$(deps_dmesg_injector.mod.o):
+$(deps_dmesg_inject.o):
 
-dmesg_injector.mod.o: $(wildcard /usr/src/linux-headers-6.17.0-35-generic/tools/objtool/objtool)
+dmesg_inject.o: $(wildcard /usr/src/linux-headers-6.17.0-35-generic/tools/objtool/objtool)

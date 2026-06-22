@@ -53,7 +53,7 @@ static const char * const drivers[] = {
 
 static inline u32 rand_u32(void) { return get_random_u32(); }
 static inline int  rand_range(int lo, int hi) { return (int)(get_random_u32() % (hi - lo + 1) + lo); }
-static inline bool roll_pct(int pct) { return get_random_u32() < (u32)((pct / 100.0) * U32_MAX); }
+static inline bool roll_pct(int pct) { return get_random_u32() < (u32)((u64)pct * U32_MAX / 100); }
 
 static inline void rand_pci_str(char *buf, size_t sz)
 {
@@ -83,7 +83,7 @@ static inline void rand_mem_str(char *buf, size_t sz)
 	u64 off = sizes[get_random_u32() % ARRAY_SIZE(sizes)];
 	u64 sz_ = sizes[get_random_u32() % ARRAY_SIZE(sizes)];
 	u64 base = bases[get_random_u32() % ARRAY_SIZE(bases)] + off;
-	snprintf(buf, sz, "0x%llx-0x%llx", base, base + sz_ - 1);
+	snprintf(buf, sz, "0x%llx-0x%llx", (unsigned long long)base, (unsigned long long)(base + sz_ - 1));
 }
 
 static inline const char *rand_driver(void)
